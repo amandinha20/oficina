@@ -1,0 +1,78 @@
+<style>
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+.clientes-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+}
+.clientes-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.clientes-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.clientes-container th, .clientes-container td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+.clientes-container th {
+    background: #007bff;
+    color: #fff;
+}
+.clientes-container a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.clientes-container a:hover {
+    text-decoration: underline;
+}
+.novo-btn {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.novo-btn:hover {
+    background: #218838;
+}
+</style>
+<div class="clientes-container">
+    <h1>Clientes</h1>
+    <a class="novo-btn" href="{% url 'clientes:novo' %}">Novo Cliente</a>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Ações</th>
+        </tr>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.cpf }}</td>
+            <td>{{ cliente.telefone }}</td>
+            <td>{{ cliente.endereco }}</td>
+            <td>
+                <a href="{% url 'clientes:editar' cliente.id %}">Editar</a> |
+                <a href="{% url 'clientes:excluir' cliente.id %}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

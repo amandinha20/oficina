@@ -1,0 +1,52 @@
+<style>
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+.login-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 350px;
+    margin: 80px auto;
+    text-align: center;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.login-container input[type=text],
+.login-container input[type=password] {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-container input[type=submit] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.login-container input[type=submit]:hover {
+    background: #0056b3;
+}
+.login-container .erro {
+    color: #d9534f;
+    margin-top: 10px;
+}
+</style>
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="post">{% csrf_token %}
+        <input type="text" name="usuario" placeholder="Usuário"><br>
+        <input type="password" name="senha" placeholder="Senha"><br>
+        <input type="submit" value="Entrar">
+    </form>
+    {% if erro %}<div class="erro">{{ erro }}</div>{% endif %}
+</div>

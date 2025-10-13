@@ -1,0 +1,51 @@
+<style>
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+.excluir-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 60px auto;
+    text-align: center;
+}
+.excluir-container h1 {
+    margin-bottom: 20px;
+    color: #d9534f;
+}
+.excluir-container p {
+    margin-bottom: 20px;
+}
+.excluir-container input[type=submit] {
+    background: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.excluir-container input[type=submit]:hover {
+    background: #c9302c;
+}
+.excluir-container a {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+}
+.excluir-container a:hover {
+    text-decoration: underline;
+}
+</style>
+<div class="excluir-container">
+    <h1>Excluir Cliente</h1>
+    <p>Tem certeza que deseja excluir o cliente {{ cliente.nome }}?</p>
+    <form method="post">{% csrf_token %}
+        <input type="submit" value="Confirmar">
+    </form>
+    <a href="{% url 'clientes:lista' %}">Cancelar</a>
+</div>

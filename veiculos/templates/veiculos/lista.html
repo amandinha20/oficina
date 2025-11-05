@@ -1,0 +1,80 @@
+<style>
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+.veiculos-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+}
+.veiculos-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.veiculos-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.veiculos-container th, .veiculos-container td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+.veiculos-container th {
+    background: #007bff;
+    color: #fff;
+}
+.veiculos-container a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.veiculos-container a:hover {
+    text-decoration: underline;
+}
+.novo-btn {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.novo-btn:hover {
+    background: #218838;
+}
+</style>
+<div class="veiculos-container">
+    <h1>Veículos</h1>
+    <a class="novo-btn" href="{% url 'veiculos:novo' %}">Novo Veículo</a>
+    <table>
+        <tr>
+            <th>Placa</th>
+            <th>Modelo</th>
+            <th>Ano</th>
+            <th>Cor</th>
+            <th>Cliente</th>
+            <th>Ações</th>
+        </tr>
+        {% for veiculo in veiculos %}
+        <tr>
+            <td>{{ veiculo.placa }}</td>
+            <td>{{ veiculo.modelo }}</td>
+            <td>{{ veiculo.ano }}</td>
+            <td>{{ veiculo.cor }}</td>
+            <td>{{ veiculo.cliente.nome }}</td>
+            <td>
+                <a href="{% url 'veiculos:editar' veiculo.id %}">Editar</a> |
+                <a href="{% url 'veiculos:excluir' veiculo.id %}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

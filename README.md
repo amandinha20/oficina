@@ -19,6 +19,7 @@ python manage.py migrate
 python manage.py runserver
 Acesse http://127.0.0.1:8000/ no navegador.
 
+
 Link de uma documentação mais completa: 
 https://doc-14-as-apps-viewer.googleusercontent.com/viewer/secure/pdf/r26994evrlsplog6jlrnpb0klubdfvo7/ui4qkts6k9o4b9t82p1nuq651bg9f8h3/1762352100000/drive/00435045251240229807/ACFrOgCn_EnVL-KiVKH_09DTbz7d-XSHfLzf-CEYKQ49RyUshJP_E4PEnSk8-0qaOrI3b_QeMvHyaC-mGz7dUDKzKoPbVQ4gpR4Uuub6krl6x70NOwYYFcvn0mXTWbVevmto6KahBg-4MBG2K0GWCOMzSSz88gZu5RZaJfmPPWV9pJ0ciJLff9zxal2KHfqMNjsV_v1G5qX_Q2_TiqUQGUU4Z3YKc3-bUxrJmRIUtYleiTsI6pq4mSD-oW9O1jAQ2zOd_SuWfoRHTnrrtS5D?print=true&nonce=philo3nmgob7m&user=00435045251240229807&hash=6npkk6v86o6scksh044j0t2rq8dda9md
 
@@ -28,3 +29,4 @@ Imagens do projeto funcionando:
 <img width="1607" height="680" alt="image" src="https://github.com/user-attachments/assets/27a0567b-9da9-4209-986a-71094c4a00b8" />
 <img width="1251" height="864" alt="image" src="https://github.com/user-attachments/assets/0bd49cfc-aa6d-4839-a199-d23cf3229810" />
 
+Your site is live at https://amandinha20.github.io/oficina/
